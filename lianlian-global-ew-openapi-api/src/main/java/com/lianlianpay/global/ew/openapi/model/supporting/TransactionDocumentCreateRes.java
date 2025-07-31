@@ -27,6 +27,12 @@ public class TransactionDocumentCreateRes implements Serializable {
     private String merchantClientId;
 
     /**
+     * Number of contract
+     * Required if business_type = GOODS_TRADE
+     */
+    private String contractNo;
+
+    /**
      * Enum: "ECOMMERCE" "GOODS_TRADE"
      * The type of business.
      */
@@ -57,6 +63,20 @@ public class TransactionDocumentCreateRes implements Serializable {
     private String ownerId;
 
     /**
+     * Enum: "REGULAR" "CUSTOMS" "WITHOUT_SETTLE"
+     * The template of transaction document.
+     * REGULAR: Ordinary foreign exchange settlement with a declaration code of 122030.
+     * CUSTOMS: Customs-declared foreign exchange settlement with a customs declaration and declaration code is 121010
+     * WITHOUT_SETTLE: No foreign exchange settlement needed
+     */
+    private String template;
+
+    /**
+     * The unique identifier of the transaction document
+     */
+    private String transactionDocumentId;
+
+    /**
      * Business details
      */
     private TransactionDocumentCounterparty counterpartyDetails;
@@ -77,38 +97,11 @@ public class TransactionDocumentCreateRes implements Serializable {
      */
     private String tradeAmount;
 
-    /**
-     * Enum: "TRUE" "FALSE"
-     * Whether or not to settle into CNY
-     * Required if business_type=GOODS_TRADE.
-     */
-    private Boolean settlementFlag;
-
-    /**
-     * Enum: "121010" "122030"
-     * The method of declaration.
-     * Required if sellerment_flag = TRUE, choose from:
-     *
-     * 121010 (General Trade)
-     * 122030 (ECommerce Trade)
-     */
-    private String declarationMethod;
 
     /**
      * Business details
      */
-    private TransactionDocumentBusiness businessDetails;
-
-    /**
-     * Attachments
-     */
-    private List<TransactionDocumentAttachment> attachments;
-
-    /**
-     * Customs declaration information
-     * Required if business_type = "GOODS_TRADE"and declaration_method=121010
-     */
-    private TransactionDocumentCustomsDeclaration customsDeclaration;
+    private TransactionDocumentBusinessDetails businessDetails;
 
     /**
      * memo
@@ -117,14 +110,14 @@ public class TransactionDocumentCreateRes implements Serializable {
     private String memo;
 
     /**
-     * The unique identifier of the transaction document
-     */
-    private String transactionDocumentId;
-
-    /**
      * The creation time of transaction documents.
      */
     private Date createTime;
+
+    /**
+     * The update time of transaction documents.
+     */
+    private Date updateTime;
 
     /**
      * Enum: "PROCESSING" "SUCCEEDED" "FAILED"
@@ -141,4 +134,39 @@ public class TransactionDocumentCreateRes implements Serializable {
      * Failure details Might return if status = "FAILED"
      */
     private String failureReason;
+
+    /**
+     * The total amount of quota, main currency unit, rounded up to 2 decimal places.
+     */
+    private String totalQuota;
+
+    /**
+     * The available quota of transaction documents.
+     */
+    private String availableQuota;
+
+    /**
+     * The used quota of transaction documents.
+     */
+    private String usedQuota;
+
+    /**
+     * The left amount of quota for receiving, main currency unit, rounded up to 2 decimal places.
+     */
+    private String availableQuotaReceive;
+
+    /**
+     * Usage amount of quota for receiving, main currency unit, rounded up to 2 decimal places.
+     */
+    private String usedQuotaReceive;
+
+    /**
+     * The left amount of quota for receiving, main currency unit, rounded up to 2 decimal places.
+     */
+    private String availableQuotaPayout;
+
+    /**
+     * Usage amount of quota for receiving, main currency unit, rounded up to 2 decimal places.
+     */
+    private String usedQuotaPayout;
 }

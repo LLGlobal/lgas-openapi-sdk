@@ -38,24 +38,23 @@ public class TransactionDocumentExample extends AuthExample {
         req.setPurpose("PAYOUT");
         req.setOwnerId("[Your Owner ID]");
         req.setOwnerType("PAYER");
+        req.setTemplate("REGULAR");
 
         TransactionDocumentCounterparty counterparty = new TransactionDocumentCounterparty();
         counterparty.setName("[Counterparty Name]");
         counterparty.setCountryCode("US");
         req.setCounterpartyDetails(counterparty);
 
-        req.setSettlementFlag(Boolean.FALSE);
-        req.setDeclarationMethod("122030");
 
-        TransactionDocumentBusiness  business = new TransactionDocumentBusiness();
+        TransactionDocumentBusinessDetails business = new TransactionDocumentBusinessDetails();
 
+        business.setWebsite("");
         TransactionDocumentProduct product = new TransactionDocumentProduct();
         product.setProductName("[Product Name]");
         product.setUnit("PCS");
         product.setQuantity("100");
         product.setServiceDetail("");
         product.setServiceTime("2025-04-29");
-        product.setWebsite("");
         business.setProductInfo(Arrays.asList(product));
         TransactionDocumentLogistics logistics = new TransactionDocumentLogistics();
         logistics.setLogisticsCompany("DHL");
@@ -90,16 +89,17 @@ public class TransactionDocumentExample extends AuthExample {
         req.setMerchantClientId("[Your Merchant Client Id]");
         req.setOwnerId("[Your Owner ID]");
         req.setOwnerType("PAYER");
+        req.setTransactionDocumentId("[Your Transaction Document Id]");
+        req.setTemplate("REGULAR");
 
         TransactionDocumentCounterparty counterparty = new TransactionDocumentCounterparty();
         counterparty.setName("[Counterparty Name]");
         counterparty.setCountryCode("US");
         req.setCounterpartyDetails(counterparty);
 
-        req.setSettlementFlag(Boolean.FALSE);
-        req.setDeclarationMethod("122030");
 
-        TransactionDocumentBusiness  business = new TransactionDocumentBusiness();
+        TransactionDocumentBusinessDetails business = new TransactionDocumentBusinessDetails();
+        business.setWebsite("");
 
         TransactionDocumentProduct product = new TransactionDocumentProduct();
         product.setProductName("[Product Name]");
@@ -107,7 +107,6 @@ public class TransactionDocumentExample extends AuthExample {
         product.setQuantity("100");
         product.setServiceDetail("");
         product.setServiceTime("2025-04-29");
-        product.setWebsite("");
         business.setProductInfo(Arrays.asList(product));
         TransactionDocumentLogistics logistics = new TransactionDocumentLogistics();
         logistics.setLogisticsCompany("DHL");

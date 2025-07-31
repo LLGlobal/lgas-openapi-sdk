@@ -4,7 +4,6 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author huyl
@@ -30,6 +29,12 @@ public class TransactionDocumentCreateReq implements Serializable {
      * Merchant ID as known by the client platform.
      */
     private String merchantClientId;
+
+    /**
+     * Number of contract
+     * Required if business_type = GOODS_TRADE
+     */
+    private String contractNo;
 
     /**
      * business_type
@@ -76,6 +81,20 @@ public class TransactionDocumentCreateReq implements Serializable {
     private String ownerId;
 
     /**
+     * Enum: "REGULAR" "CUSTOMS" "WITHOUT_SETTLE"
+     * The template of transaction document.
+     * REGULAR: Ordinary foreign exchange settlement with a declaration code of 122030.
+     * CUSTOMS: Customs-declared foreign exchange settlement with a customs declaration and declaration code is 121010
+     * WITHOUT_SETTLE: No foreign exchange settlement needed
+     */
+    private String template;
+
+    /**
+     * The unique identifier of the transaction document
+     */
+    private String transactionDocumentId;
+
+    /**
      * counterparty_details
      * required
      * object (CounterpartyDetails)
@@ -108,47 +127,12 @@ public class TransactionDocumentCreateReq implements Serializable {
     private String tradeAmount;
 
     /**
-     * settlement_flag
-     * boolean
-     * Enum: "TRUE" "FALSE"
-     * Whether or not to settle into CNY
-     * Required if business_type=GOODS_TRADE.
-     */
-    private Boolean settlementFlag;
-
-    /**
-     * declaration_method
-     * string
-     * Enum: "121010" "122030"
-     * The method of declaration.
-     * Required if sellerment_flag = TRUE, choose from:
-     *
-     * 121010 (General Trade)
-     * 122030 (ECommerce Trade)
-     */
-    private String declarationMethod;
-
-    /**
      * business_details
      * object (BusinessDetails)
      * Business details
      */
-    private TransactionDocumentBusiness businessDetails;
+    private TransactionDocumentBusinessDetails businessDetails;
 
-    /**
-     * attachments
-     * Array of objects (Attachment)
-     * Attachments
-     */
-    private List<TransactionDocumentAttachment> attachments;
-
-    /**
-     * customs_declaration
-     * object (CustomsDeclaration)
-     * Customs declaration information
-     * Required if business_type = "GOODS_TRADE"and declaration_method=121010
-     */
-    private TransactionDocumentCustomsDeclaration customsDeclaration;
 
     /**
      * memo

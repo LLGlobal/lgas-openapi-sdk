@@ -5,9 +5,9 @@
 ## 模块说明
 
 - **`api`**：包含连连 Global eWallet API 的请求和响应数据模型（POJO）。
-- **[client](file:///Users/huyl/IdeaProjects/lianlian-global-ew-openapi-sdk/lianlian-global-ew-openapi-service/src/main/java/com/lianlianpay/global/ew/openapi/service/AccountService.java#L38-L38)**：基于 Retrofit 的基础客户端，用于调用连连 Global eWallet 接口，包含 `api` 模块。
+- **`client`**：基于 Retrofit 的基础客户端，用于调用连连 Global eWallet 接口，包含 `api` 模块。
 - **`service`**：封装了客户端的服务类，简化调用流程，推荐快速接入方式。
-- **示例项目**：演示如何使用 `service` 模块进行开发。
+- **`example`**：演示如何使用 `service` 模块进行开发。
 
 ## 支持的 API
 
@@ -42,6 +42,13 @@
 - [文件](https://docs.lianlianglobal.com/api-reference#tag/Files)
 - [交易文档](https://docs.lianlianglobal.com/api-reference#tag/Transaction-Document)
 - [银行账户验证](https://docs.lianlianglobal.com/api-reference#tag/Bank-Account-Verification)
+
+
+## 安装方式
+### Maven
+```shell
+mvn clean deploy -am -pl lianlian-global-ew-openapi-service
+```
 
 ## 引入方式
 

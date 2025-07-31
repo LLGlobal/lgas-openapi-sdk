@@ -36,6 +36,13 @@ as well as an example project using the service.
   + [Files](https://docs.lianlianglobal.com/api-reference#tag/Files)
   + [Transaction Document](https://docs.lianlianglobal.com/api-reference#tag/Transaction-Document)
   + [Bank Account Verification](https://docs.lianlianglobal.com/api-reference#tag/Bank-Account-Verification)
+
+## Installing
+
+```shell
+mvn clean deploy -am -pl lianlian-global-ew-openapi-service
+```
+
 ## Importing
 
 ### Gradle

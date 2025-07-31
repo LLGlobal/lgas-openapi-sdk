@@ -51,11 +51,5 @@ public class TransactionDocumentProduct implements Serializable {
      */
     private String unit;
 
-    /**
-     * website
-     * string
-     * Product website
-     * Required if business_type=GOODS_TRADE.
-     */
-    private String website;
+
 }

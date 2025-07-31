@@ -27,6 +27,12 @@ public class TransactionDocumentDetailRes implements Serializable {
     private String merchantClientId;
 
     /**
+     * Number of contract
+     * Required if business_type = GOODS_TRADE
+     */
+    private String contractNo;
+
+    /**
      * Enum: "ECOMMERCE" "GOODS_TRADE"
      * The type of business.
      */
@@ -55,6 +61,20 @@ public class TransactionDocumentDetailRes implements Serializable {
      * The id of the party who own this transaction document. Must be transferred if the currency of the parties to the transaction involves a currency controlled by a currency controlled country. (e.g. when payment is made in the currency of CNY in the CN region)
      */
     private String ownerId;
+
+    /**
+     * Enum: "REGULAR" "CUSTOMS" "WITHOUT_SETTLE"
+     * The template of transaction document.
+     * REGULAR: Ordinary foreign exchange settlement with a declaration code of 122030.
+     * CUSTOMS: Customs-declared foreign exchange settlement with a customs declaration and declaration code is 121010
+     * WITHOUT_SETTLE: No foreign exchange settlement needed
+     */
+    private String template;
+
+    /**
+     * The unique identifier of the transaction document
+     */
+    private String transactionDocumentId;
 
     /**
      * Business details
@@ -97,7 +117,7 @@ public class TransactionDocumentDetailRes implements Serializable {
     /**
      * Business details
      */
-    private TransactionDocumentBusiness businessDetails;
+    private TransactionDocumentBusinessDetails businessDetails;
 
     /**
      * Attachments
@@ -115,11 +135,6 @@ public class TransactionDocumentDetailRes implements Serializable {
      * Required if business_type ="ECOMMERCE"
      */
     private String memo;
-
-    /**
-     * The unique identifier of the transaction document
-     */
-    private String transactionDocumentId;
 
     /**
      * The creation time of transaction documents.
