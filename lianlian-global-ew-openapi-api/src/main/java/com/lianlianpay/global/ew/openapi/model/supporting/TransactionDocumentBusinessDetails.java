@@ -11,7 +11,15 @@ import java.util.List;
  * @since 2025/4/29
  */
 @Data
-public class TransactionDocumentBusiness implements Serializable {
+public class TransactionDocumentBusinessDetails implements Serializable {
+
+    /**
+     * website
+     * string
+     * Product website
+     * Required if business_type=GOODS_TRADE.
+     */
+    private String website;
 
     /**
      * Product information
@@ -22,5 +30,12 @@ public class TransactionDocumentBusiness implements Serializable {
      * Logistics information
      */
     private TransactionDocumentLogistics  logisticsInfo;
+
+    /**
+     * attachments
+     * Array of objects (Attachment)
+     * Attachments
+     */
+    private List<TransactionDocumentAttachment> attachments;
 
 }

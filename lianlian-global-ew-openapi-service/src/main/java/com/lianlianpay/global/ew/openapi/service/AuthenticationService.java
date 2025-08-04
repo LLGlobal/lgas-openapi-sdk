@@ -31,6 +31,7 @@ public class AuthenticationService {
      * @return
      */
     public Result<OAuthRes> getAccessToken(OAuthReq req) {
-        return this.client.execute(this.oAuthApi.getAccessToken(req));
+        return this.client.execute(this.oAuthApi.getAccessToken(req.getGrantType(), req.getClientId(), req.getClientSecret(),
+                req.getCode(), req.getRedirectUri(), req.getRefreshToken()));
     }
 }

@@ -4,6 +4,7 @@ import com.lianlianpay.global.ew.openapi.model.authentication.OAuthReq;
 import com.lianlianpay.global.ew.openapi.model.authentication.OAuthRes;
 import io.reactivex.Single;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 
 /**
@@ -18,9 +19,14 @@ public interface OAuthApi {
      * You can use the OAuth 2.0 client credentials grant specified in RFC 6749, to access web-hosted resources by using the identity of an application.
      * This type of grant is commonly used for server-to-server interactions that must run in the background, without immediate interaction with a user.
      * These types of applications are often referred to as daemons or service accounts.
-     * @param req
+     * @param
      * @return
      */
     @GET("/gateway/v1/ew-oauth2/token")
-    Single<OAuthRes> getAccessToken(@QueryMap OAuthReq req);
+    Single<OAuthRes> getAccessToken(@Query("grant_type") String grantType,
+                                    @Query("client_id") String clientId,
+                                    @Query("client_secret") String clientSecret,
+                                    @Query("code") String code,
+                                    @Query("redirect_uri") String redirectUri,
+                                    @Query("refresh_token") String refreshToken);
 }
