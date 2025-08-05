@@ -29,7 +29,7 @@ public class TransactionDocumentBusinessDetails implements Serializable {
     /**
      * Logistics information
      */
-    private TransactionDocumentLogistics  logisticsInfo;
+    private TransactionDocumentLogistics  logisticInfo;
 
     /**
      * attachments

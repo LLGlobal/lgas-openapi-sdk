@@ -7,6 +7,7 @@ import com.lianlianpay.global.ew.openapi.api.account.exchanges.ExchangeApi;
 import com.lianlianpay.global.ew.openapi.api.account.payment.*;
 import com.lianlianpay.global.ew.openapi.api.account.platform.SplitsApi;
 import com.lianlianpay.global.ew.openapi.api.account.query.TransactionApi;
+import com.lianlianpay.global.ew.openapi.api.account.receive.ReceiveApi;
 import com.lianlianpay.global.ew.openapi.api.account.services.CardsApi;
 import com.lianlianpay.global.ew.openapi.api.account.services.RemittanceApi;
 import com.lianlianpay.global.ew.openapi.client.Client;
@@ -20,6 +21,8 @@ import com.lianlianpay.global.ew.openapi.model.account.exchanges.LockedFxQuoteRe
 import com.lianlianpay.global.ew.openapi.model.account.payment.*;
 import com.lianlianpay.global.ew.openapi.model.account.platform.*;
 import com.lianlianpay.global.ew.openapi.model.account.query.*;
+import com.lianlianpay.global.ew.openapi.model.account.receive.DepositConfirmationCreateReq;
+import com.lianlianpay.global.ew.openapi.model.account.receive.DepositConfirmationCreateRes;
 import com.lianlianpay.global.ew.openapi.model.account.service.*;
 import com.lianlianpay.global.ew.openapi.model.common.PageResult;
 import io.reactivex.Single;
@@ -112,6 +115,8 @@ public class AccountService {
      * Transaction API
      */
     private final TransactionApi transactionApi;
+
+    private final ReceiveApi receiveApi;
     
     /**
      * Cards API
@@ -140,6 +145,7 @@ public class AccountService {
         estimateApi = this.client.create(EstimateApi.class);
         splitsApi = this.client.create(SplitsApi.class);
         transactionApi = this.client.create(TransactionApi.class);
+        receiveApi = this.client.create(ReceiveApi.class);
         cardsApi = this.client.create(CardsApi.class);
         remittanceApi = this.client.create(RemittanceApi.class);
     }
@@ -774,6 +780,15 @@ public class AccountService {
         return client.execute(transactionApi.retrieveCardPayout(id));
     }
 
+    /**
+     * <h3>Create Deposit Confirmation.</h3>
+     * If the action_type =PROCESS, the funds are added to the receiving account. If action_type =REFUND, a refund is initiated.
+     * @param req
+     * @return
+     */
+    public Result<DepositConfirmationCreateRes> createDepositConfirmation(DepositConfirmationCreateReq req) {
+        return client.execute(receiveApi.createDepositConfirmation(req));
+    }
 
     /**
      * <h3>Open a service</h3>

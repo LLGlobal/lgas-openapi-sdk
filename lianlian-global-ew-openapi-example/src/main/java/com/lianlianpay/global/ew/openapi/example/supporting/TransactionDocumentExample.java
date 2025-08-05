@@ -64,7 +64,7 @@ public class TransactionDocumentExample extends AuthExample {
         logistics.setDestination("US");
         logistics.setDelivered(true);
         logistics.setDeliveryDate(new Date());
-        business.setLogisticsInfo(logistics);
+        business.setLogisticInfo(logistics);
         req.setBusinessDetails(business);
 
         req.setMemo("memo");
@@ -116,7 +116,7 @@ public class TransactionDocumentExample extends AuthExample {
         logistics.setDestination("US");
         logistics.setDelivered(true);
         logistics.setDeliveryDate(new Date());
-        business.setLogisticsInfo(logistics);
+        business.setLogisticInfo(logistics);
         req.setBusinessDetails(business);
 
         req.setMemo("memo");
