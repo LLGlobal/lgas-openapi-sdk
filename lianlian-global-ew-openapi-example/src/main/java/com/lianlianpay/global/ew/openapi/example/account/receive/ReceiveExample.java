@@ -4,7 +4,7 @@ import com.lianlianpay.global.ew.openapi.example.auth.AuthExample;
 import com.lianlianpay.global.ew.openapi.http.Result;
 import com.lianlianpay.global.ew.openapi.model.account.receive.DepositConfirmationCreateReq;
 import com.lianlianpay.global.ew.openapi.model.account.receive.DepositConfirmationCreateRes;
-import com.lianlianpay.global.ew.openapi.model.account.receive.DepositTransactionDocument;
+import com.lianlianpay.global.ew.openapi.model.supporting.RelationTransactionDocument;
 import com.lianlianpay.global.ew.openapi.service.AccountService;
 
 import java.util.Arrays;
@@ -33,7 +33,7 @@ public class ReceiveExample extends AuthExample {
         //unique request id
         req.setRequestId("20250207135000001");
         req.setActionType("PROCESS");
-        DepositTransactionDocument transactionDocument = new DepositTransactionDocument();
+        RelationTransactionDocument transactionDocument = new RelationTransactionDocument();
         transactionDocument.setTransactionDocumentId("[transaction document id]");
         transactionDocument.setRelationAmount("100");
         transactionDocument.setRelationCurrency("USD");

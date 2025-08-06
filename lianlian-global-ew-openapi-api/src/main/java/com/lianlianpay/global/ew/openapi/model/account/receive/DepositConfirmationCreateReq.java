@@ -1,5 +1,6 @@
 package com.lianlianpay.global.ew.openapi.model.account.receive;
 
+import com.lianlianpay.global.ew.openapi.model.supporting.RelationTransactionDocument;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -37,9 +38,9 @@ public class DepositConfirmationCreateReq implements Serializable {
     private String actionType;
 
     /**
-     * Array of objects (DepositTransactionDocument)
+     * Array of objects (RelationTransactionDocument)
      */
-    private List<DepositTransactionDocument> transactionDocumentList;
+    private List<RelationTransactionDocument> transactionDocumentList;
 
     /**
      * The reason is required when action_type=REFUND

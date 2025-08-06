@@ -1,6 +1,7 @@
 package com.lianlianpay.global.ew.openapi.model.account.payment;
 
 import com.lianlianpay.global.ew.openapi.model.common.AdditionalInfo;
+import com.lianlianpay.global.ew.openapi.model.supporting.RelationTransactionDocument;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -44,6 +45,11 @@ public class WithdrawCreateReq implements Serializable {
      * This is the postscript information visible to the payee.
      */
     private String reference;
+
+    /**
+     * The transaction documents related to the withdrawal.
+     */
+    private List<RelationTransactionDocument> transactionDocumentList;
 
     /**
      * Set of key-value pairs that you can attach the business information according to Lianlian's requirements.

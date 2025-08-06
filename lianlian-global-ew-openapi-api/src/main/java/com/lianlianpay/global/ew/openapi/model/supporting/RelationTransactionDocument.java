@@ -1,4 +1,4 @@
-package com.lianlianpay.global.ew.openapi.model.account.receive;
+package com.lianlianpay.global.ew.openapi.model.supporting;
 
 import lombok.Data;
 
@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @since 2025/8/5
  */
 @Data
-public class DepositTransactionDocument implements Serializable {
+public class RelationTransactionDocument implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
