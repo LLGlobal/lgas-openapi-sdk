@@ -169,8 +169,8 @@ public class AcceptanceService {
      * @param accessToken
      * @return
      */
-    public AcceptanceService newAccessToken(String accessToken) {
-        this.client.getConfiguration().newAccessToken(accessToken);
+    public AcceptanceService accessToken(String accessToken) {
+        this.client.getConfiguration().setAccessToken(accessToken);
         return this;
     }
 }

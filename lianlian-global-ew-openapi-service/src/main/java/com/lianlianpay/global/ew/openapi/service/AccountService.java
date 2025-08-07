@@ -11,7 +11,6 @@ import com.lianlianpay.global.ew.openapi.api.account.receive.ReceiveApi;
 import com.lianlianpay.global.ew.openapi.api.account.services.CardsApi;
 import com.lianlianpay.global.ew.openapi.api.account.services.RemittanceApi;
 import com.lianlianpay.global.ew.openapi.client.Client;
-import com.lianlianpay.global.ew.openapi.client.enums.AuthMode;
 import com.lianlianpay.global.ew.openapi.http.Result;
 import com.lianlianpay.global.ew.openapi.model.account.accounts.*;
 import com.lianlianpay.global.ew.openapi.model.account.exchanges.ConversionCreateReq;
@@ -25,9 +24,6 @@ import com.lianlianpay.global.ew.openapi.model.account.receive.DepositConfirmati
 import com.lianlianpay.global.ew.openapi.model.account.receive.DepositConfirmationCreateRes;
 import com.lianlianpay.global.ew.openapi.model.account.service.*;
 import com.lianlianpay.global.ew.openapi.model.common.PageResult;
-import io.reactivex.Single;
-import retrofit2.http.DELETE;
-import retrofit2.http.Path;
 
 
 import java.util.List;
@@ -935,8 +931,8 @@ public class AccountService {
      * @param newAccessToken
      * @return
      */
-    public AccountService newAccessToken(String newAccessToken) {
-        this.client.getConfiguration().newAccessToken(newAccessToken);
+    public AccountService accessToken(String newAccessToken) {
+        this.client.getConfiguration().setAccessToken(newAccessToken);
         return this;
     }
 }

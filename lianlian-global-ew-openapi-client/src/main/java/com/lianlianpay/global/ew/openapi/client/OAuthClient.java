@@ -19,6 +19,6 @@ public class OAuthClient extends BaseOpenApiClient {
     }
 
     public void setAccessToken(String accessToken) {
-        this.config.newAccessToken(accessToken);
+        this.config.setAccessToken(accessToken);
     }
 }

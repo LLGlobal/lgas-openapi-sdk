@@ -28,6 +28,11 @@ public class OAuth2Interceptor implements Interceptor {
         Request request = chain.request().newBuilder()
                 .addHeader("Authorization", "Bearer " + this.tokenWrapper.get())
                 .build();
-        return chain.proceed(request);
+        try {
+            return chain.proceed(request);
+        } finally {
+            // clear AccessToken when response
+            this.tokenWrapper.clear();
+        }
     }
 }

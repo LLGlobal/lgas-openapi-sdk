@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.lianlianpay.global.ew.openapi.client.enums.AuthMode;
 import com.lianlianpay.global.ew.openapi.client.model.ClientConfiguration;
 import com.lianlianpay.global.ew.openapi.http.Result;
 import com.lianlianpay.global.ew.openapi.interceptor.RequestForceGetWithBodyInterceptor;

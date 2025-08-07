@@ -276,8 +276,8 @@ public class SupportingService {
      * @param accessToken
      * @return
      */
-    public SupportingService newAccessToken(String accessToken) {
-        this.client.getConfiguration().newAccessToken(accessToken);
+    public SupportingService accessToken(String accessToken) {
+        this.client.getConfiguration().setAccessToken(accessToken);
         return this;
     }
 

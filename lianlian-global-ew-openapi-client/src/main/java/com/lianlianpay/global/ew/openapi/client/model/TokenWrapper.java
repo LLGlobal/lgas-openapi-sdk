@@ -10,18 +10,22 @@ public class TokenWrapper implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String accessToken;
+    private final ThreadLocal<String> accessTokenHolder = new ThreadLocal<>();
 
     private TokenWrapper(String accessToken){
-        this.accessToken = accessToken;
+        this.accessTokenHolder.set(accessToken);;
     }
 
-    public synchronized void set(String accessToken){
-        this.accessToken = accessToken;
+    public void set(String accessToken){
+        this.accessTokenHolder.set(accessToken);
     }
 
     public String get(){
-        return accessToken;
+        return this.accessTokenHolder.get();
+    }
+
+    public void clear(){
+        this.accessTokenHolder.remove();
     }
 
     public static TokenWrapper of(String accessToken){

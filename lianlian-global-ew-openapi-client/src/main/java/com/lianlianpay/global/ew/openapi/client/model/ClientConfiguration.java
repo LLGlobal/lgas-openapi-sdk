@@ -39,10 +39,17 @@ public class ClientConfiguration {
 
     private final Proxy proxy;
 
-    public void newAccessToken(String newAccessToken) {
+    public void setAccessToken(String newAccessToken) {
         if (AuthMode.OAUTH != this.authMode) {
             throw new IllegalArgumentException("newAccessToken only support OAuth mode");
         }
        this.accessToken.set(newAccessToken);
+    }
+
+    public void clearAccessToken() {
+        if (AuthMode.OAUTH != this.authMode) {
+            throw new IllegalArgumentException("clearAccessToken only support OAuth mode");
+        }
+        this.accessToken.clear();
     }
 }
