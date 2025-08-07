@@ -3,6 +3,7 @@ package com.lianlianpay.global.ew.openapi.model.account.accounts;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -30,11 +31,11 @@ public class IndividualKycCertInfo implements Serializable {
     /**
      * Cert issue date
      */
-    private String certIssueDate;
+    private Date certIssueDate;
     /**
      * Cert expiration date
      */
-    private String certExpirationDate;
+    private Date certExpirationDate;
     /**
      * Whether the certificate is permanently valid. The default value is false. Permanently valid: true
      */
