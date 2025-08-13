@@ -127,14 +127,14 @@ public class CorporateBasicInfo implements Serializable {
      * Items Enum: "1001" "1002" "1003" "1004" "1005" "1006" "1007" "1008" "1009" "1010" "1011" "2001" "2002" "2003" "2004" "2005" "3001" "3002" "3003" "3004"
      * Main trading commodity name
      */
-    private String mainExportCommodityName;
+    private List<String> mainExportCommodityName;
 
     /**
      * main_export_distinct
      * Array of strings
      * Main trading countries
      */
-    private String mainExportDistinct;
+    private List<String> mainExportDistinct;
 
     /**
      * export_volume_last_year
