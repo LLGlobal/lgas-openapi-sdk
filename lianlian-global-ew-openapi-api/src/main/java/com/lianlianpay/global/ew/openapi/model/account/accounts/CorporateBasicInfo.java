@@ -130,11 +130,11 @@ public class CorporateBasicInfo implements Serializable {
     private List<String> mainExportCommodityName;
 
     /**
-     * main_export_distinct
+     * main_export_district
      * Array of strings
      * Main trading countries
      */
-    private List<String> mainExportDistinct;
+    private List<String> mainExportDistrict;
 
     /**
      * export_volume_last_year
