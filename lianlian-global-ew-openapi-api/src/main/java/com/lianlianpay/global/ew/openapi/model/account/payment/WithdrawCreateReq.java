@@ -47,6 +47,12 @@ public class WithdrawCreateReq implements Serializable {
     private String reference;
 
     /**
+     * Enum: REGULAR, CUSTOMS，WITHOUT_SETTLE
+     * The type of transaction document.
+     */
+    private String transactionDocumentType;
+
+    /**
      * The transaction documents related to the withdrawal.
      */
     private List<RelationTransactionDocument> transactionDocumentList;

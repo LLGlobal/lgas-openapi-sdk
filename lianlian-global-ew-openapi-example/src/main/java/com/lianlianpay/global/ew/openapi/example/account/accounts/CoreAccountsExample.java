@@ -5,6 +5,7 @@ import com.lianlianpay.global.ew.openapi.http.Result;
 import com.lianlianpay.global.ew.openapi.model.account.accounts.*;
 import com.lianlianpay.global.ew.openapi.service.AccountService;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -106,7 +107,7 @@ public class CoreAccountsExample extends AuthExample {
         staffBaseInfo.setCompanyMemberType("DIRECTOR");
         staffBaseInfo.setFullName("李四");
         staffBaseInfo.setFullNameEn("Li Si");
-        staffBaseInfo.setBirthday(new Date());
+        staffBaseInfo.setBirthday(LocalDate.of(1989, 1, 1));
         staffBaseInfo.setNationality("HK");
         staffBaseInfo.setResidentialAddress(addressInfo);
         IndividualKycCertInfo individualDoc = new IndividualKycCertInfo();
@@ -124,7 +125,7 @@ public class CoreAccountsExample extends AuthExample {
         staffBaseInfo1.setCompanyMemberType("UBO");
         staffBaseInfo1.setFullName("张三");
         staffBaseInfo1.setFullNameEn("Zhang San");
-        staffBaseInfo1.setBirthday(new Date());
+        staffBaseInfo1.setBirthday(LocalDate.of(1989, 1, 1));
         staffBaseInfo1.setNationality("HK");
         staffBaseInfo1.setResidentialAddress(addressInfo);
         IndividualKycCertInfo individualDoc1 = new IndividualKycCertInfo();
@@ -156,7 +157,7 @@ public class CoreAccountsExample extends AuthExample {
         individualBasic.setFirstName("Si");
         individualBasic.setLastName("Li");
         individualBasic.setNationality("HK");
-        individualBasic.setBirthday(new Date());
+        individualBasic.setBirthday(LocalDate.of(1989, 1, 1));
         individualBasic.setPhone("85212345678");
 
         AddressInfo addressInfo = new AddressInfo();
@@ -255,7 +256,7 @@ public class CoreAccountsExample extends AuthExample {
         staffBaseInfo.setCompanyMemberType("DIRECTOR");
         staffBaseInfo.setFullName("李四");
         staffBaseInfo.setFullNameEn("Li Si");
-        staffBaseInfo.setBirthday(new Date());
+        staffBaseInfo.setBirthday(LocalDate.of(1989, 1, 1));
         staffBaseInfo.setNationality("HK");
         staffBaseInfo.setResidentialAddress(addressInfo);
         IndividualKycCertInfo individualDoc = new IndividualKycCertInfo();
@@ -273,7 +274,7 @@ public class CoreAccountsExample extends AuthExample {
         staffBaseInfo1.setCompanyMemberType("UBO");
         staffBaseInfo1.setFullName("张三");
         staffBaseInfo1.setFullNameEn("Zhang San");
-        staffBaseInfo1.setBirthday(new Date());
+        staffBaseInfo1.setBirthday(LocalDate.of(1989, 1, 1));
         staffBaseInfo1.setNationality("HK");
         staffBaseInfo1.setResidentialAddress(addressInfo);
         IndividualKycCertInfo individualDoc1 = new IndividualKycCertInfo();
@@ -305,7 +306,7 @@ public class CoreAccountsExample extends AuthExample {
         individualBasic.setFirstName("Si");
         individualBasic.setLastName("Li");
         individualBasic.setNationality("HK");
-        individualBasic.setBirthday(new Date());
+        individualBasic.setBirthday(LocalDate.of(1989, 1, 1));
         individualBasic.setPhone("85212345678");
 
         AddressInfo addressInfo = new AddressInfo();

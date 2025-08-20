@@ -163,5 +163,5 @@ public class CorporateBasicInfo implements Serializable {
      * Array of objects (AttachmentInfo)
      * The file ID is the ID returned by the uploaded file.
      */
-    private List<AttachmentDesc> attachments;
+    private List<AttachmentInfo> attachments;
 }

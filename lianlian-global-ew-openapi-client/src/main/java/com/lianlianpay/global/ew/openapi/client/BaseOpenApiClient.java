@@ -4,8 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.lianlianpay.global.ew.openapi.client.enums.AuthMode;
 import com.lianlianpay.global.ew.openapi.client.model.ClientConfiguration;
+import com.lianlianpay.global.ew.openapi.deserializer.LocalDateSecondsDeserializer;
 import com.lianlianpay.global.ew.openapi.http.Result;
 import com.lianlianpay.global.ew.openapi.interceptor.RequestForceGetWithBodyInterceptor;
 import com.lianlianpay.global.ew.openapi.interceptor.RequestSignatureInterceptor;
@@ -13,6 +15,7 @@ import com.lianlianpay.global.ew.openapi.interceptor.ResponseSignatureIntercepto
 import com.lianlianpay.global.ew.openapi.interceptor.logger.OpenapiLogger;
 import com.lianlianpay.global.ew.openapi.listener.RequestForceGetWithBodyListener;
 import com.lianlianpay.global.ew.openapi.model.error.OpenApiError;
+import com.lianlianpay.global.ew.openapi.serializer.LocalDateSecondsSerializer;
 import io.reactivex.Single;
 import okhttp3.ConnectionPool;
 import okhttp3.Interceptor;
@@ -24,6 +27,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -105,6 +109,10 @@ public abstract class BaseOpenApiClient implements Client{
 
     private static ObjectMapper defaultObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
+        SimpleModule module = new SimpleModule();
+        module.addDeserializer(LocalDate.class, new LocalDateSecondsDeserializer());
+        module.addSerializer(LocalDate.class, new LocalDateSecondsSerializer());
+        mapper.registerModule(module);
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);

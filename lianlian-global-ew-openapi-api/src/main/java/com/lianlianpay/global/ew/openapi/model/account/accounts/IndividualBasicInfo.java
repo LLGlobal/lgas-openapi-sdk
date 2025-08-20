@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -42,9 +43,9 @@ public class IndividualBasicInfo implements Serializable {
     private String lastName;
 
     /**
-     * The object creation time. Measured in milliseconds since the Unix epoch. It's a long type number.
+     * Birthday. Measured in seconds since the Unix epoch. It's a long type number.
      */
-    private Date birthday;
+    private LocalDate birthday;
 
     /**
      * Contact address (residential address)
@@ -94,5 +95,5 @@ public class IndividualBasicInfo implements Serializable {
     /**
      * The file ID is the ID returned by the uploaded file.
      */
-    private List<AttachmentDesc> attachments;
+    private List<AttachmentInfo> attachments;
 }
