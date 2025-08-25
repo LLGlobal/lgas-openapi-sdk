@@ -14,6 +14,13 @@ public class TransactionDocumentProduct implements Serializable {
     private static final long serialVersionUID = -1L;
 
     /**
+     * product_id
+     * string
+     * Product ID
+     */
+    private String productId;
+
+    /**
      * product_name
      * string
      * Name of product/service Name of product if original_order_type = GOODS, name of service if original_order_type = SERVICES
