@@ -5,7 +5,6 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -75,4 +74,8 @@ public class CorporateStaffBaseInfo implements Serializable {
      */
     private List<IndividualKycCertInfo> individualDoc;
 
+    /**
+     * Attachments
+     */
+    private List<AttachmentInfo> attachments;
 }
