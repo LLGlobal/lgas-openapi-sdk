@@ -4,7 +4,6 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -30,6 +29,27 @@ public class ReceivingAccountDetailRes implements Serializable {
      * Nickname of ReceivingAccount
      */
     private String nickname;
+
+    /**
+     * currency
+     * string
+     * Currency of ReceivingAccount
+     */
+    private String currency;
+
+    /**
+     * channel_code
+     * string
+     * Channel code of ReceivingAccount
+     */
+    private String channelCode;
+
+    /**
+     * account_no
+     * string
+     * Account number of ReceivingAccount
+     */
+    private String accountNo;
 
     /**
      * bank_info
