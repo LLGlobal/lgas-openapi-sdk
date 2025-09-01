@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,6 +34,19 @@ public class CorporateKycCertInfo implements Serializable {
      * Cert no
      */
     private String companyDocNumber;
+
+    /**
+     * Cert issue date
+     */
+    private Date certIssueDate;
+    /**
+     * Cert expiration date
+     */
+    private Date certExpirationDate;
+    /**
+     * Whether the certificate is permanently valid. The default value is false. Permanently valid: true
+     */
+    private Boolean isCertPermanent;
 
     /**
      * The file ID is the ID returned by the uploaded file.
