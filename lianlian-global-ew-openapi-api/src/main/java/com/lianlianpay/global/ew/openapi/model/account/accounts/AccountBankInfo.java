@@ -21,6 +21,11 @@ public class AccountBankInfo implements Serializable {
     private String aba;
 
     /**
+     * Brstn code.
+     */
+    private String brstnCode;
+
+    /**
      * Enum: "Checking" "Savings"
      * Type of account.
      */
