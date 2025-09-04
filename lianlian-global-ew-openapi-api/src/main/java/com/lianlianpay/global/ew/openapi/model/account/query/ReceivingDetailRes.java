@@ -13,13 +13,14 @@ import java.util.Date;
 public class ReceivingDetailRes implements Serializable {
 
     private static final long serialVersionUID = -1L;
-
+    
     /**
      * id
      * string
      * Unique ID created by the LianLian Global.
      */
     private String id;
+
 
     /**
      * business_order_id
@@ -36,13 +37,6 @@ public class ReceivingDetailRes implements Serializable {
     private String creditorName;
 
     /**
-     * creditor_account_no
-     * string
-     * Account NO of creditor.
-     */
-    private String creditorAccountNo;
-
-    /**
      * receive_currency
      * string
      * The receive currency (in three-letter ISO 4217 format).
@@ -56,12 +50,6 @@ public class ReceivingDetailRes implements Serializable {
      */
     private String receiveAmount;
 
-    /**
-     * entry_platform_name
-     * string
-     * Name of entry platform (e.g., Amazon).
-     */
-    private String entryPlatformName;
 
     /**
      * entry_amount
@@ -100,16 +88,16 @@ public class ReceivingDetailRes implements Serializable {
     /**
      * account_id
      * string
-     * Balance account ID.
+     * account ID.
      */
     private String accountId;
 
     /**
-     * receive_account_no
+     * virtual_account_no
      * string
-     * The Receiving Account NO.
+     * The Virtual Account NO.
      */
-    private String receiveAccountNo;
+    private String virtual_account_no;
 
     /**
      * status
