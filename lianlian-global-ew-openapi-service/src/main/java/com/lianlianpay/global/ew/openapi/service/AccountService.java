@@ -25,7 +25,6 @@ import com.lianlianpay.global.ew.openapi.model.account.receive.DepositConfirmati
 import com.lianlianpay.global.ew.openapi.model.account.service.*;
 import com.lianlianpay.global.ew.openapi.model.common.PageResult;
 
-
 import java.util.List;
 
 /**
@@ -610,6 +609,15 @@ public class AccountService {
      */
     public Result<BeneficiaryAccountDetailRes> createBeneficiaryAccount(BeneficiaryAccountCreateReq req) {
         return client.execute(withdrawApi.createBeneficiaryAccount(req));
+    }
+
+    /**
+     * <h3>Retrieve a beneficiary account</h3>
+     * @param id
+     * @return
+     */
+    public Result<BeneficiaryAccountDetailRes> retrieveBeneficiaryAccount(String id) {
+        return client.execute(withdrawApi.retrieveBeneficiaryAccount(id));
     }
 
     /**

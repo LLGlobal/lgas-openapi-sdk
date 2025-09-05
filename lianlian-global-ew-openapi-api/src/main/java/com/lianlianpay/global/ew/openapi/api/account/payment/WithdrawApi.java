@@ -22,6 +22,14 @@ public interface WithdrawApi {
     Single<BeneficiaryAccountDetailRes> createBeneficiaryAccount(@Body BeneficiaryAccountCreateReq req);
 
     /**
+     * <h3>Retrieve a beneficiary account</h3>
+     * @param id
+     * @return
+     */
+    @GET("/gateway/v1/ew-beneficiary/account/{id}")
+    Single<BeneficiaryAccountDetailRes> retrieveBeneficiaryAccount(@Path("id") String id);
+
+    /**
      * <h3>Retrieve all beneficiary accounts</h3>
      * @param req
      * @return

@@ -44,6 +44,19 @@ public class WithdrawExample extends AuthExample {
     }
 
     /**
+     * <h3>Retrieve a beneficiary account</h3>
+     * @return
+     */
+    public void retrieveBeneficiaryAccount() {
+        String beneficiaryId = "beneficiaryId";
+        Result<BeneficiaryAccountDetailRes> result = accountService.retrieveBeneficiaryAccount(beneficiaryId);
+        if (result.isHttpOk()) {
+            // do something when success
+            System.out.println(result.getData());
+        }
+    }
+
+    /**
      * <h3>Retrieve all beneficiary accounts</h3>
      * @return
      */
