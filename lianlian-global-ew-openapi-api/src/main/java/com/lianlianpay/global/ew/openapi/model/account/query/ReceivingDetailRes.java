@@ -13,7 +13,7 @@ import java.util.Date;
 public class ReceivingDetailRes implements Serializable {
 
     private static final long serialVersionUID = -1L;
-    
+
     /**
      * id
      * string
@@ -71,12 +71,6 @@ public class ReceivingDetailRes implements Serializable {
      * The Receiving fee amount, main currency unit, rounded up to 2 decimal places.
      */
     private String fee;
-
-    /**
-     * memo
-     * string
-     */
-    private String memo;
 
     /**
      * reference
