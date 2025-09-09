@@ -21,14 +21,6 @@ public class ReceivingDetailRes implements Serializable {
      */
     private String id;
 
-
-    /**
-     * business_order_id
-     * string
-     * Business Order ID.
-     */
-    private String businessOrderId;
-
     /**
      * creditor_name
      * string
@@ -100,6 +92,20 @@ public class ReceivingDetailRes implements Serializable {
      * Status of Receiving.
      */
     private String status;
+
+    /**
+     * failure_code
+     * string
+     * Failure code.
+     */
+    private String failureCode;
+
+    /**
+     * failure_reason
+     * string
+     * Failure reason.
+     */
+    private String failureReason;
 
     /**
      * create_time
