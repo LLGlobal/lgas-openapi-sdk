@@ -47,6 +47,11 @@ public class WithdrawCreateReq implements Serializable {
     private String reference;
 
     /**
+     * This parameter is required when exchange is required
+     */
+    private String rateId;
+
+    /**
      * Enum: REGULAR, CUSTOMS，WITHOUT_SETTLE
      * The type of transaction document.
      */
