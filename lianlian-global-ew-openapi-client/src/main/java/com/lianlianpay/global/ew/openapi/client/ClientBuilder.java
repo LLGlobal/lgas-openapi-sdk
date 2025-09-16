@@ -22,6 +22,8 @@ public class ClientBuilder {
 
     private static final boolean DEFAULT_CHECK_SIGN = true;
 
+    private static final boolean DEFAULT_CHECK_SIGN_STRICT = false;
+
 
     public static OAuthClient defaultOAuthClient(String endpoint, String privateKey, String lianlianPublicKey) {
         return defaultOAuthClient(endpoint, privateKey, lianlianPublicKey, null);
@@ -132,6 +134,8 @@ public class ClientBuilder {
 
         private Boolean checkSign;
 
+        private Boolean checkSignStrict;
+
         private Proxy proxy;
 
         private OAuthClientBuilder(){
@@ -178,6 +182,11 @@ public class ClientBuilder {
             return this;
         }
 
+        public OAuthClientBuilder checkSignStrict(Boolean checkSignStrict) {
+            this.checkSignStrict = checkSignStrict;
+            return this;
+        }
+
         public OAuthClientBuilder proxy(Proxy proxy) {
             this.proxy = proxy;
             return this;
@@ -194,6 +203,7 @@ public class ClientBuilder {
                     .readTimeout(this.readTimeout == null ? DEFAULT_READ_TIMEOUT : this.readTimeout)
                     .withSign(this.withSign == null ? DEFAULT_WITH_SIGN : this.withSign)
                     .checkSign(this.checkSign == null ? DEFAULT_CHECK_SIGN : this.checkSign)
+                    .checkSignStrict(this.checkSignStrict == null ? DEFAULT_CHECK_SIGN_STRICT : this.checkSignStrict)
                     .proxy(this.proxy)
                     .build();
             return new OAuthClient(configuration);
@@ -220,6 +230,8 @@ public class ClientBuilder {
         private Boolean withSign;
 
         private Boolean checkSign;
+
+        private Boolean checkSignStrict;
 
         private Proxy proxy;
 
@@ -272,6 +284,11 @@ public class ClientBuilder {
             return this;
         }
 
+        public BasicAuthClientBuilder checkSignStrict(Boolean checkSignStrict) {
+            this.checkSignStrict = checkSignStrict;
+            return this;
+        }
+
         public BasicAuthClientBuilder proxy(Proxy proxy) {
             this.proxy = proxy;
             return this;
@@ -289,6 +306,7 @@ public class ClientBuilder {
                     .readTimeout(this.readTimeout == null ? DEFAULT_READ_TIMEOUT : this.readTimeout)
                     .withSign(this.withSign == null ? DEFAULT_WITH_SIGN : this.withSign)
                     .checkSign(this.checkSign == null ? DEFAULT_CHECK_SIGN : this.checkSign)
+                    .checkSignStrict(this.checkSignStrict == null ? DEFAULT_CHECK_SIGN_STRICT : this.checkSignStrict)
                     .proxy(this.proxy)
                     .build();
             return new BasicAuthClient(configuration);

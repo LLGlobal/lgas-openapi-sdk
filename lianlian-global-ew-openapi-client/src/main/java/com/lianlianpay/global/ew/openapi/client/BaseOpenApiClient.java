@@ -138,7 +138,7 @@ public abstract class BaseOpenApiClient implements Client{
             builder.addInterceptor(new RequestSignatureInterceptor(config.getPrivateKey()));
         }
         if (config.isCheckSign()) {
-            builder.addInterceptor(new ResponseSignatureInterceptor(config.getLianlianPublicKey()));
+            builder.addInterceptor(new ResponseSignatureInterceptor(config.getLianlianPublicKey(), config.isCheckSignStrict()));
         }
         // logging  interceptor
         HttpLoggingInterceptor loggingInterceptor = loggingInterceptor();

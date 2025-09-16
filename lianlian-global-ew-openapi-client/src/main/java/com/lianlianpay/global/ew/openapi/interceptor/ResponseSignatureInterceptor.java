@@ -27,8 +27,11 @@ public class ResponseSignatureInterceptor implements Interceptor {
 
     private String lianlianPublicKey;
 
-    public ResponseSignatureInterceptor(String lianlianPublicKey) {
+    private boolean checkSignStrict;
+
+    public ResponseSignatureInterceptor(String lianlianPublicKey, boolean checkSignStrict) {
         this.lianlianPublicKey = lianlianPublicKey;
+        this.checkSignStrict = checkSignStrict;
     }
 
 
@@ -37,6 +40,9 @@ public class ResponseSignatureInterceptor implements Interceptor {
         Request request = chain.request();
         Response response = chain.proceed(request);
         String signatureStr = response.header(SIGNATURE_HEADER);
+        if (this.checkSignStrict && signatureStr == null) {
+            throw new SignatureException("Response Missing Signature.");
+        }
         if (signatureStr == null) {
             return response;
         }
