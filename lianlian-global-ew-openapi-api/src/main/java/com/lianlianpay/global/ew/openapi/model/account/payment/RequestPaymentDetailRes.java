@@ -111,4 +111,22 @@ public class RequestPaymentDetailRes implements Serializable {
      * The Request Payment settlement status.
      */
     private String settlementStatus;
+
+    /**
+     * string <money> <br/>
+     * The amount to settle, main currency unit, rounded up to 2 decimal places.
+     */
+    private String settlementAmount;
+
+    /**
+     * string <br/>
+     * The currency to settle (in three-letter ISO 4217 format).
+     */
+    private String settlementCurrency;
+
+    /**
+     * string <money> <br/>
+     * The fee to settle, main currency unit, rounded up to 2 decimal places.
+     */
+    private String settlementFee;
 }
